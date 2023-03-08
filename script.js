@@ -1,141 +1,186 @@
 const Score = document.querySelector("#score");
-const Speed = document.querySelector("#speed");
-const Niggers = document.querySelector('#niggers');
-const Jail = document.querySelector('#jail');
-const Buesness = document.querySelector('#buesness');
-const Communications = document.querySelector("#communications");
-const Click = document.querySelector('#click');
+const Money = document.querySelector("#money");
+const Waves = document.querySelector("#waves");
+const Count1 = document.querySelector("#count1");
+const Count2 = document.querySelector("#count2");
+const Count3 = document.querySelector("#count3");
+const Img = document.querySelector(".img");
+const Bar = document.querySelector("#bar");
+const Con = document.querySelector("#continue");
 
-const audio_clown = document.querySelector('#audio');
+const audio_boss = document.querySelector('#boss');
 const audio_money = document.querySelector('#audio_money');
-const audio_done = document.querySelector('#audio_done');
-let score = 0;
-let speed = 0;
-let niggers = 0;
-let jail = 0;
-let buesness = 0;
-let communications = 0;
+const audio_atack = document.querySelector('#audio_atack');
+
+let count1 = 0;
+let count2 = 0;
+let count3 = 0;
+let score = 100;
 let click = 1;
-
-
-if (localStorage.getItem('score') != null) {
-    score = +localStorage.getItem('score');
-    Score.innerHTML = score;
-}
-if (localStorage.getItem('speed') != null) {
-    speed = +localStorage.getItem('speed');
-    Speed.innerHTML = speed + "/сек";
-}
-if (localStorage.getItem('niggers') != null) {
-    niggers = +localStorage.getItem('niggers');
-    Niggers.innerHTML = 'У вас ' + niggers + ' niggers';
-}
-if (localStorage.getItem('jail') != null) {
-    jail = +localStorage.getItem('jail');
-    Jail.innerHTML = 'У вас ' + jail + ' тюрьм';
-}
-if (localStorage.getItem('buesness') != null) {
-    buesness = +localStorage.getItem('buesness');
-    Buesness.innerHTML = 'У вас ' + buesness + ' бизнесов';
-}
-if (localStorage.getItem('communications') != null) {
-    communications = +localStorage.getItem('communications');
-    Communications.innerHTML = 'У вас ' + communications + ' связей';
-}
-if (localStorage.getItem('click') != null) {
-    click = +localStorage.getItem('click');
-    Click.innerHTML = 'У вас ' + click + ' click';
+let money = 0;
+let waves = 1;
+let maxhp = score;
+let difference=0;
+let boss = {
+    a: "./src/img v2/Король слизней.png",
+    b: "./src/img v2/Глаз Ктулху.png",
+    c: "./src/img v2/Скелетрон.png",
+    d: "./src/img v2/Королева пчел.png",
+    e: "./src/img v2/Мозг Ктулху.png",
+    f: "./src/img v2/Пожиратель мирова.png",
+    g: "./src/img v2/Стена плоти.png",
 }
 
-setInterval(function Timer() {
-    score += speed;
-    Score.innerHTML = score;
-}, 1000);
+
+function con(){
+    audio_boss.play();
+    waves+=1;
+    Waves.innerHTML = "Волна "+waves;
+
+    if (waves == 1) {
+        Img.src = boss.a;
+
+    }else
+    if (waves == 2) {
+        Img.src = boss.b;
+        money+=250;
+        Money.innerHTML=money+" 💰";
+        maxhp += 300;
+        score=maxhp;
+        Score.innerHTML = score;
+        Bar.style.width=100+'%';
+    
+    }else
+    if (waves == 3) {
+        Img.src = boss.c;
+        money+=350;
+        Money.innerHTML=money+" 💰";
+        maxhp += 300;
+        score=maxhp;
+    
+    }else
+    if (waves == 4) {
+        Img.src = boss.d;
+        money+=550;
+        Money.innerHTML=money+" 💰";
+        maxhp += 300;
+        score=maxhp;
+    
+    }else
+    if (waves ==5) {
+        Img.src = boss.e;
+        money+=850;
+        Money.innerHTML=money+" 💰";
+        maxhp += 300;
+        score=maxhp;
+    
+    }else
+    if (waves== 6) {
+        Img.src = boss.f;
+        money+=1050;
+        Money.innerHTML=money+" 💰";
+        maxhp += 300;
+        score=maxhp;
+    
+    }else
+    if (waves == 7) {
+        Img.src = boss.g;
+        money+=3050;
+        Money.innerHTML=money+" 💰";
+        maxhp += 300;
+        score=maxhp;
+    
+    }else{
+        alert("Игра окончена");
+        location.reload();
+    }
+}
 
 function click_clown() {
-    audio_clown.play();
-    score += click;
-    Score.innerHTML = score;
-}
-function click_niggers() {
+    if(score>0){
 
-    if (score - 10 < 0) {
-        audio_money.play();
-    } else {
-        audio_done.play();
-        speed += 1;
-        Speed.innerHTML = speed + "/сек";
-        niggers += 1;
-        Niggers.innerHTML = 'У вас ' + niggers + ' niggers';
-        score -= 10;
+        audio_atack.play();
+        score -= click;
         Score.innerHTML = score;
+        difference=((score/maxhp)*100);
+        Bar.style.width=difference+'%';
     }
-
+    
 }
-function click_jail() {
 
-    if (score - 100 < 0) {
+// магазин
+function copper_sword() {
+    if (money >= 100) {
         audio_money.play();
-    } else {
-        audio_done.play();
-        speed += 12;
-        Speed.innerHTML = speed + "/сек";
-        jail += 1;
-        Jail.innerHTML = 'У вас ' + jail + ' тюрьм';
-        score -= 100;
-        Score.innerHTML = score;
-    }
-
-}
-function click_buesness() {
-
-    if (score - 1000 < 0) {
-        audio_money.play();
-    } else {
-        audio_done.play();
-        speed += 130;
-        Speed.innerHTML = speed + "/сек";
-        buesness += 1;
-        Buesness.innerHTML = 'У вас ' + buesness + ' бизнесов';
-        score -= 1000;
-        Score.innerHTML = score;
-    }
-
-}
-function click_communications() {
-
-    if (score - 10000 < 0) {
-        audio_money.play();
-    } else {
-        audio_done.play();
-        speed += 1400;
-        Speed.innerHTML = speed + "/сек";
-        communications += 1;
-        Communications.innerHTML = 'У вас ' + communications + ' связей';
-        score -= 10000;
-        Score.innerHTML = score;
-    }
-
-}
-function click_click() {
-
-    if (score - 500 < 0) {
-        audio_money.play();
-    } else {
-        audio_done.play();
+        count1 += 1;
+        Count1.innerHTML = count1;
         click += 1;
-        Click.innerHTML = 'У вас ' + click + ' click';
-        score -= 500;
-        Score.innerHTML = score;
+        money -= 100;
+        Money.innerHTML = money;
     }
 
+
 }
-window.onbeforeunload = function () {
-    localStorage.setItem('score', score);
-    localStorage.setItem('speed', speed);
-    localStorage.setItem('niggers', niggers);
-    localStorage.setItem('jail', jail);
-    localStorage.setItem('buesness', buesness);
-    localStorage.setItem('communications', communications);
-    localStorage.setItem('click', click);
-};
+function mega_shark() {
+    if (money >= 300) {
+        audio_money.play();
+        count2 += 1;
+        Count2.innerHTML = count2;
+        click += 15;
+        money -= 300;
+        Money.innerHTML = money;
+    }
+
+
+}
+function zenith() {
+    if (money >= 800) {
+        audio_money.play();
+        count3 += 1;
+        Count3.innerHTML = count3;
+        click += 50;
+        money -= 800;
+        Money.innerHTML = money;
+    }
+
+
+}
+
+// if (localStorage.getItem('score') != null) {
+//     score = +localStorage.getItem('score');
+//     Score.innerHTML = score;
+// }
+// if (localStorage.getItem('speed') != null) {
+//     speed = +localStorage.getItem('speed');
+//     Speed.innerHTML = speed + "/сек";
+// }
+// if (localStorage.getItem('niggers') != null) {
+//     niggers = +localStorage.getItem('niggers');
+//     Niggers.innerHTML = 'У вас ' + niggers + ' niggers';
+// }
+// if (localStorage.getItem('jail') != null) {
+//     jail = +localStorage.getItem('jail');
+//     Jail.innerHTML = 'У вас ' + jail + ' тюрьм';
+// }
+// if (localStorage.getItem('buesness') != null) {
+//     buesness = +localStorage.getItem('buesness');
+//     Buesness.innerHTML = 'У вас ' + buesness + ' бизнесов';
+// }
+// if (localStorage.getItem('communications') != null) {
+//     communications = +localStorage.getItem('communications');
+//     Communications.innerHTML = 'У вас ' + communications + ' связей';
+// }
+// if (localStorage.getItem('click') != null) {
+//     click = +localStorage.getItem('click');
+//     Click.innerHTML = 'У вас ' + click + ' click';
+// }
+
+// window.onbeforeunload = function () {
+//     localStorage.setItem('score', score);
+//     localStorage.setItem('speed', speed);
+//     localStorage.setItem('niggers', niggers);
+//     localStorage.setItem('jail', jail);
+//     localStorage.setItem('buesness', buesness);
+//     localStorage.setItem('communications', communications);
+//     localStorage.setItem('click', click);
+// };
