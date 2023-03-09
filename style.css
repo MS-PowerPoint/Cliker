@@ -2,22 +2,19 @@ body {
     width: 100%;
 }
 
-img {
+/* img {
     height: 200px;
     width: 234px;
 
-}
+} */
 
 .img {
     width: 300px;
     height: 200px;
+
 }
 
-.box_clown {
-    text-align: center;
-    height: 380px;
-    margin: 20px;
-}
+
 
 .main {
     background-color: rgb(99, 71, 10);
@@ -41,12 +38,13 @@ img {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 300px;
     background-color: rgb(39, 0, 53);
-    margin: 20px;
+    margin: 5px;
     padding: 20px;
     border-radius: 20px;
     border: 3px solid rgb(100, 2, 2);
+    
 
 }
 
@@ -56,8 +54,9 @@ img {
 } */
 
 a {
-    margin: 20px;
+    margin: 5px;
     font-size: 25px;
+    cursor: pointer;
 }
 
 /* #magaz {
@@ -112,27 +111,34 @@ a {
     padding-left: 1px;
 } */
 
+.tymbaumba 
+{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .list_menu {
-    margin-bottom: 50px;
-}
-.content{
-    display: flex;
-    flex-direction: column;
 
+    display: flex;
+    align-items: center;
 }
+
+
 
 .menu {
-    width: 940px;
+    width: 1000px;
     top: 0;
-    padding: 1vh 50px;
+    padding:  10px 95px;
     background: rgba(58, 53, 66, 0.5);
     left: 0px;
     height: 100vh;
     border-right: 20px solid #20db20;
     background: linear-gradient(70deg, #0000ffa3, #ff5271db);
     position: absolute;
-    left: -920px;
+    left: -940px;
     transition: 0.6s ease;
 }
 

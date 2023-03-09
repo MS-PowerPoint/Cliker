@@ -33,7 +33,6 @@ let boss = {
 
 
 function con(){
-    audio_boss.play();
     waves+=1;
     Waves.innerHTML = "Волна "+waves;
 
@@ -93,7 +92,9 @@ function con(){
     }else{
         alert("Игра окончена");
         location.reload();
+        return;
     }
+    audio_boss.play();
 }
 
 function click_clown() {
@@ -101,6 +102,9 @@ function click_clown() {
 
         audio_atack.play();
         score -= click;
+        if(score<0){
+            score=0;
+        }
         Score.innerHTML = score;
         difference=((score/maxhp)*100);
         Bar.style.width=difference+'%';
@@ -113,10 +117,11 @@ function copper_sword() {
     if (money >= 100) {
         audio_money.play();
         count1 += 1;
-        Count1.innerHTML = count1;
+        Count1.innerHTML = "у вас " + count1+ " мечей";
         click += 1;
         money -= 100;
-        Money.innerHTML = money;
+        
+        Money.innerHTML = money + " 💰";
     }
 
 
@@ -125,10 +130,10 @@ function mega_shark() {
     if (money >= 300) {
         audio_money.play();
         count2 += 1;
-        Count2.innerHTML = count2;
+        Count2.innerHTML = "у вас " + count2 + " акул"
         click += 15;
         money -= 300;
-        Money.innerHTML = money;
+        Money.innerHTML = money + " 💰";
     }
 
 
@@ -137,10 +142,10 @@ function zenith() {
     if (money >= 800) {
         audio_money.play();
         count3 += 1;
-        Count3.innerHTML = count3;
+        Count3.innerHTML = "у вас " + count3 + " меч";
         click += 50;
         money -= 800;
-        Money.innerHTML = money;
+        Money.innerHTML = money + " 💰";
     }
 
 
