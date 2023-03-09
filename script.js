@@ -107,6 +107,7 @@ function con() {
                                 return;
                             }
     audio_boss.play();
+    Con.className='con1';
 }
 
 function click_clown() {
@@ -126,10 +127,10 @@ function click_clown() {
     
     if(!score==0){
         Con.className='con1';
-        console.log(0);
+
     }else{
         Con.className='con';
-        console.log(1);
+
     }
 }
 

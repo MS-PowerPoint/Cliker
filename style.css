@@ -28,6 +28,9 @@ body {
 .con {
     display: block;
 }
+.con1{
+    display: none;
+}
 
 .container_clown {
     font-size: 30px;
