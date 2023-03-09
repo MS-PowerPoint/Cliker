@@ -6,7 +6,6 @@ body {
     width: 500px;
     height: 300px;
 }
-
 .main {
     background: #0F2027;
     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
@@ -23,7 +22,19 @@ body {
 .con{
 display: block;
 }
-
+.con1{
+    display: none;
+}
+.list_menu a:hover { 
+    transition: 0.2s ease; 
+    padding-left: 1px; 
+} 
+#money{ 
+    z-index: 1;
+}
+#sword{ 
+    width: 130px; 
+}
 .container_clown {
     font-size: 30px;
     display: flex;
@@ -109,7 +120,7 @@ a {
 .menu {
     width: 1000px;
     top: 0;
-    padding: 10px 95px;
+    padding: 10px 50px;
     background: rgba(58, 53, 66, 0.5);
     height: 100vh;
     border-right: 20px solid rgb(190, 190, 190, 0.3);
