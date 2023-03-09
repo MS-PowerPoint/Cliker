@@ -14,7 +14,7 @@ body {
     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
     text-align: center;
-    color: #fff;
+    /* color: #fff;
     text-shadow:
         0 0 7px #fff,
         0 0 10px #fff,
@@ -22,7 +22,7 @@ body {
         0 0 20px rgb(162, 0, 255),
         0 0 92px rgb(162, 0, 255),
         0 0 50px rgb(162, 0, 255),
-        0 0 1px rgb(162, 0, 255);
+        0 0 1px rgb(162, 0, 255); */
 
 
 }
