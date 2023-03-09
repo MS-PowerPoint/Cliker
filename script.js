@@ -12,37 +12,25 @@ const audio_boss = document.querySelector('#boss');
 const audio_money = document.querySelector('#audio_money');
 const audio_atack = document.querySelector('#audio_atack');
 
-// let count1 = 0;
-// let count2 = 0;
-// let count3 = 0;
-// let score = 100;
-// let click = 1;
-// let money = 0;
-// let waves = 1;
-// let maxhp = score;
-// let difference=0;
-// let boss = {
-//     a: "./src/img v2/Король слизней.png",
-//     b: "./src/img v2/Глаз Ктулху.png",
-//     c: "./src/img v2/Скелетрон.png",
-//     d: "./src/img v2/Королева пчел.png",
-//     e: "./src/img v2/Мозг Ктулху.png",
-//     f: "./src/img v2/Пожиратель мирова.png",
-//     g: "./src/img v2/Стена плоти.png",
-// }
+let count1 = 0;
+let count2 = 0;
+let count3 = 0;
+let score = 100;
+let click = 1;
+let money = 0;
+let waves = 1;
+let maxhp = score;
+let difference=0;
+let boss = {
+    a: "./src/img v2/Король слизней.png",
+    b: "./src/img v2/Глаз Ктулху.png",
+    c: "./src/img v2/Скелетрон.png",
+    d: "./src/img v2/Королева пчел.png",
+    e: "./src/img v2/Мозг Ктулху.png",
+    f: "./src/img v2/Пожиратель мирова.png",
+    g: "./src/img v2/Стена плоти.png",
+}
  
-let arrBoss=[
-0,
-1,
-2,
-3,
-4,
-5,
-6,]
-let arrHpBoss=
-[100,
-300,
-]
 function con(){
     waves+=1;
     Waves.innerHTML = "Волна "+waves;
