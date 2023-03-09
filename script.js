@@ -50,6 +50,8 @@ function con() {
             score = maxhp;
             Score.innerHTML = score;
             Bar.style.width = 100 + '%';
+            Img.style.width=290+'px';
+            Img.style.height=200+'px';
 
         } else
             if (waves == 3) {
@@ -60,6 +62,8 @@ function con() {
                 score = maxhp;
                 Score.innerHTML = score;
                 Bar.style.width = 100 + '%';
+                Img.style.width=270+'px';
+                Img.style.height=185+'px';
 
             } else
                 if (waves == 4) {
@@ -70,6 +74,8 @@ function con() {
                     score = maxhp;
                     Score.innerHTML = score;
                     Bar.style.width = 100 + '%';
+                    Img.style.width=180+'px';
+                    Img.style.height=210+'px';
 
                 } else
                     if (waves == 5) {
@@ -80,6 +86,8 @@ function con() {
                         score = maxhp;
                         Score.innerHTML = score;
                         Bar.style.width = 100 + '%';
+                        Img.style.width=180+'px';
+                        Img.style.height=175+'px';
 
                     } else
                         if (waves == 6) {
@@ -90,6 +98,8 @@ function con() {
                             score = maxhp;
                             Score.innerHTML = score;
                             Bar.style.width = 100 + '%';
+                            Img.style.width=280+'px';
+                            Img.style.height=105+'px';
 
                         } else
                             if (waves == 7) {
@@ -100,10 +110,14 @@ function con() {
                                 score = maxhp;
                                 Score.innerHTML = score;
                                 Bar.style.width = 100 + '%';
+                                Img.style.width=340+'px';
+                                Img.style.height=205+'px';
 
                             } else {
                                 alert("Игра окончена");
                                 location.reload();
+                                Img.style.width=400+'px';
+                                Img.style.height=300+'px';
                                 return;
                             }
     audio_boss.play();
